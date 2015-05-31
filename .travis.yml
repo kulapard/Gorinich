@@ -8,13 +8,13 @@ python:
 #  - "nightly"
 install:
   - "pip install -e ."
-  - "pip install python-coveralls"
-#  - "pip install coveralls"
+#  - "pip install python-coveralls"
+  - "pip install coveralls"
   - "pip install coverage"
   - "pip install nose"
 script:
-#  - "nosetests --with-coverage"
   - "nosetests --with-coverage --cover-package=gorinich"
+  - "coverage run --source=. setup.py test"
 after_success:
   - "coveralls"
 notifications:
