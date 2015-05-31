@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/sockjs/1.0.0/sockjs.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/ace/1.1.9/min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="http://cdn.jsdelivr.net/sockjs/0.3/sockjs.min.js"></script>-->
+
+    <script type="text/javascript" charset="utf-8">
+        var UID = '{{ uid }}';
+        var PAD_ID = '{{ pad.pad_id }}';
+    </script>
+    <script src="{{ STATIC_URL }}main.js?{{ timestamp }}" type="text/javascript" charset="utf-8"></script>
+
+    <style type="text/css" media="screen">
+        body {
+            background: #2F3129;
+
+        }
+        #editor {
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*right: 0;*/
+            /*bottom: 0;*/
+            /*left: 0;*/
+            position: absolute;
+            top:  30px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        .MyCursorClass {
+            position: absolute;
+            border-left: 2px solid gold;
+        }
+    </style>
+</head>
+<body>
+<div>
+    {{ pad.expire_at }} UTC
+</div>
+<div id="editor">#!/usr/local/bin/python
+
+# If no arguments were given, print a helpful message
+if len(sys.argv)==1:
+    print '''Usage:
+celsius temp1 temp2 ...'''
+    sys.exit(0)
+
+# Loop over the arguments
+for i in sys.argv[1:]:
+    try:
+        fahrenheit=float(string.atoi(i))
+    except string.atoi_error:
+        print repr(i), "Привет"
+    else:
+        celsius=(fahrenheit-32)*5.0/9.0
+        print '%i\260F = %i\260C' % (int(fahrenheit), int(celsius+.5))
+
+</div>
+</body>
+</html>
