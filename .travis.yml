@@ -13,9 +13,9 @@ install:
   - pip install coverage
   - pip install nose
 script:
-#  - "nosetests --with-coverage --cover-package=gorinich"
-  - nosetests
-  - coverage run --source=. setup.py test
+  - nosetests --with-coverage
+#  - nosetests
+#  - coverage run --source=. setup.py test
 after_success:
   - coveralls --verbose
 notifications:
