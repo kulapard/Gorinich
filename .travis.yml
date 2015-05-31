@@ -17,3 +17,10 @@ script:
   - "nosetests --with-coverage --cover-package=gorinich/"
 after_success:
   - "coveralls"
+
+notifications:
+    email:
+        recipients:
+            - "taras@drapalyuk.com"
+        on_success: "always"
+        on_failure: "always"
