@@ -8,9 +8,9 @@ python:
   - "nightly"
 # command to install dependencies
 install:
-  - "pip install ."
+  - "pip install -e ."
   - "pip install coveralls"
 # command to run tests
-script: nosetests --with-coverage
+script: nosetests --with-coverage --cover-erase --cover-package=gorinich/ --cover-html
 after_success:
   coveralls
