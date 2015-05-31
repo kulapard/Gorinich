@@ -7,13 +7,14 @@ python:
   - "3.4"
   - "nightly"
 install:
-  - "pip install -e ."
+#  - "pip install -e ."
   - "pip install python-coveralls"
   - "pip install coverage"
   - "pip install nose"
 #  - "pip install coveralls"
 script:
-#  - "nosetests --with-coverage"
-  - "nosetests --with-coverage --cover-package=gorinich/"
+  - "python setup.py install"
+  - "nosetests --with-coverage"
+#  - "nosetests --with-coverage --cover-package=gorinich/"
 after_success:
   - "coveralls"
