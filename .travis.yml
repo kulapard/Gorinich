@@ -9,8 +9,13 @@ python:
 # command to install dependencies
 install:
   - "pip install -e ."
-  - "pip install coveralls"
+  - "pip install python-coveralls"
+  - "pip install coverage"       # Add me to install coverage.py
+  - "pip install nose"           # Add me to install nose
+#  - "pip install coveralls"
 # command to run tests
-script: nosetests --with-coverage --cover-erase --cover-package=gorinich/ --cover-html
+script:
+  - "nosetests --with-coverage"
+#  - "nosetests --with-coverage --cover-erase --cover-package=gorinich/ --cover-html"
 after_success:
-  coveralls
+  - "coveralls"
