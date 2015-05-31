@@ -5,9 +5,9 @@ python:
   - "3.2"
   - "3.3"
   - "3.4"
+  - "nightly"
 # command to install dependencies
 install:
   - "pip install ."
-  - "pip install nose"
 # command to run tests
 script: nosetests
