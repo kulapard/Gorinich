@@ -1,5 +1,6 @@
 # Gorinich
 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/kulapard/Gorinich/master/LICENSE)
 [![Build Status](https://travis-ci.org/kulapard/Gorinich.svg?branch=master)](https://travis-ci.org/kulapard/Gorinich)
 [![Code Health](https://landscape.io/github/kulapard/Gorinich/master/landscape.svg?style=flat)](https://landscape.io/github/kulapard/Gorinich/master)
 [![Coverage Status](https://coveralls.io/repos/kulapard/Gorinich/badge.svg)](https://coveralls.io/r/kulapard/Gorinich)
